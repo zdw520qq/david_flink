@@ -27,7 +27,7 @@
             <version>${scala.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-scala -->
+        <!--scala-->
         <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-scala -->
         <dependency>
             <groupId>org.apache.flink</groupId>
@@ -35,15 +35,32 @@
             <version>${flink.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-clients -->
+        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-streaming-scala -->
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-clients_2.11</artifactId>
+            <artifactId>flink-streaming-scala_2.11</artifactId>
             <version>${flink.version}</version>
+            <scope>provided</scope>
         </dependency>
 
 
+        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-clients -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.flink</groupId>-->
+        <!--            <artifactId>flink-clients_2.11</artifactId>-->
+        <!--            <version>${flink.version}</version>-->
+        <!--        </dependency>-->
+
+
+        <!--java-->
         <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-streaming-java -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-java</artifactId>
+            <version>${flink.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-streaming-java_2.11</artifactId>
@@ -51,12 +68,12 @@
             <scope>provided</scope>
         </dependency>
 
+
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-connector-kafka_2.11</artifactId>
             <version>${flink.version}</version>
         </dependency>
-
 
     </dependencies>
 

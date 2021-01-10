@@ -1,10 +1,5 @@
 package david.java.flink.watermark;
 
-import java.time.Duration;
-
-import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
-import org.apache.flink.api.common.eventtime.WatermarkStrategy;
-
 /**
  * @Description:
  * @Author: Zhaodawei
