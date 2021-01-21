@@ -35,7 +35,14 @@ import java.util.*;
  */
 public class LRU {
     public static void main(String[] args) {
-        int[][] data = new int[][]{{1, 1, 1}, {1, 2, 2}, {1, 3, 2}, {2, 1, 0}, {1, 4, 4}, {2, 2, 0}};
+        int[][] data = new int[6][];
+        data[0] = new int[]{1, 1, 1};
+        data[1] = new int[]{1, 2, 2};
+        data[2] = new int[]{1, 3, 2};
+        data[3] = new int[]{2, 1};
+        data[4] = new int[]{1, 4, 4};
+        data[5] = new int[]{2, 2};
+
         int num = 3;
 
         // int[] ints = lru(data, num);
