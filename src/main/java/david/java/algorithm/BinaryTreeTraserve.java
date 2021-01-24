@@ -1,10 +1,9 @@
 package david.java.algorithm;
 
+import apple.laf.JRSUIUtils;
+
 import javax.swing.tree.TreeNode;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * @Description: 题目描述
@@ -29,23 +28,60 @@ public class BinaryTreeTraserve {
 
     public static void main(String[] args) {
         TreeNode treeNode = generateInstance();
-        int length = getLength(treeNode);
-        System.out.println(length);
-        List<Integer> list1 = new ArrayList<>();
-        List<Integer> list2 = new ArrayList<>();
-        preOrderTraversal(treeNode, list1);
+        // int length = getLength(treeNode);
+        // System.out.println(length);
+        // List<Integer> list1 = new ArrayList<>();
+        // // List<Integer> list2 = new ArrayList<>();
+        // preOrderTraversal(treeNode, list1);
+        // //
+        // int[] num2 = new int[8];
+        // midOrderTraversal(treeNode, num2);
+        // //
+        // System.out.println(list1);
+        // //
+        // Arrays.stream(num2).forEach(t -> System.out.print(t + ", "));
+        // System.out.println();
+        // //
+        // int[] num3 = new int[8];
+        // postOrderTraversal(treeNode, num3);
+        // Arrays.stream(num3).forEach(t -> System.out.print(t + ", "));
+        // System.out.println();
+        // System.out.println("===== no recursive");
+        //
+        // List<Integer> i1 = dfsPreOrder(treeNode);
+        // System.out.println(i1);
+        //
+        // List<Integer> i2 = dfsMidOrder(treeNode);
+        // System.out.println(i2);
+        //
+        // List<Integer> i3 = dfsPostOrder(treeNode);
+        // System.out.println(i3);
 
-        int[] num2 = new int[8];
-        midOrderTraversal(treeNode, num2);
+        // System.out.println("======= deque =======");
+        // Deque<Integer> deque = new ArrayDeque<>();
+        // deque.push(1);
+        // deque.push(2);
+        // deque.push(3);
+        // System.out.println(deque);
+        // System.out.println(deque.pollFirst());      //3
+        // System.out.println(deque.pollLast());    //1
+        // System.out.println(deque.pop()); //3
+        // System.out.println(deque);
 
-        System.out.println(list1);
+        // System.out.println("========= queue =======");
+        // LinkedList<Integer> link  = new LinkedList<>();
+        // link.add(1);
+        // link.add(2);
+        // link.add(3);
+        // System.out.println(link);
+        // System.out.println(link.getFirst());
+        // System.out.println(link.getLast());
+        // System.out.println(link.pop());
 
-        Arrays.stream(num2).forEach(t -> System.out.print(t + ", "));
-        System.out.println();
+        System.out.println("======== bfs level order =========");
+        List<Integer> int4 = bfsOrder(treeNode);
+        System.out.println(int4);
 
-        int[] num3 = new int[8];
-        postOrderTraversal(treeNode, num3);
-        Arrays.stream(num3).forEach(t -> System.out.print(t + ", "));
     }
 
 
@@ -65,20 +101,94 @@ public class BinaryTreeTraserve {
 
     }
 
-    static List<Integer> preOrderTraversalNoRecursive (TreeNode head) {
+    static List<Integer> dfsPreOrder(TreeNode head) {
         List<Integer> result = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
 
+        TreeNode cur = head;
+        while (cur != null || !stack.isEmpty()) {
+            while (cur != null) {
+                result.add(cur.val);
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.pop().right;
+        }
+
+        return result;
+    }
+
+    /**
+     * breadth first search  广度优先, 层序
+     * @param head
+     * @return
+     */
+    static List<Integer> bfsOrder(TreeNode head) {
+        List<Integer> result = new ArrayList<>();
+        Deque<TreeNode> deque = new ArrayDeque<>();
         if (head == null) {
             return result;
         }
-
-        while (stack.peek() != null) {
-
+        deque.push(head);
+        while (!deque.isEmpty()) {
+            TreeNode pop = deque.pollLast();
+            result.add(pop.val);
+            if(pop.left != null) {
+                deque.push(pop.left);
+            }
+            if(pop.right != null) {
+                deque.push(pop.right);
+            }
         }
 
-
+        return result;
     }
+
+    static List<Integer> dfsMidOrder(TreeNode head) {
+        List<Integer> result = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+
+        TreeNode cur = head;
+        while (cur != null || !stack.isEmpty()) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            TreeNode pop = stack.pop();
+            result.add(pop.val);
+            cur = pop.right;
+        }
+
+        return result;
+    }
+
+    static List<Integer> dfsPostOrder(TreeNode head) {
+        List<Integer> result = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+
+        TreeNode cur = head;
+        //标记最后一个节点, 当最后一个节点往上的时候,如果没有last标记, 那个peek的时候永远不会为null
+        TreeNode last = null;
+        while (cur != null || !stack.isEmpty()) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.peek();
+            if (cur.right == null || cur.right == last) {
+                result.add(cur.val);
+                stack.pop();
+                last = cur;
+                cur = null;
+
+            } else {
+                cur = cur.right;
+            }
+        }
+        return result;
+    }
+
+
 
     static int i = 0;
     static int j = 0;
@@ -135,19 +245,19 @@ public class BinaryTreeTraserve {
 
     /**
      * a treeNode below
-     * 先序遍历： 1 2 4 6 7 8 3 5
-     * 中序遍历： 4 7 6 8 2 1 3 5
-     * 后序遍历： 7 8 6 4 2 5 3 1
+     * 先序遍历： 1 2 4 3 5 6 7 8
+     * 中序遍历： 4 2 1 3 5 7 6 8
+     * 后序遍历： 4 2 7 8 6 5 3 1
      * <p>
-     * 1
-     * /  \
-     * 2    3
-     * /      \
-     * 4        5
-     * \
-     * 6
-     * / \
-     * 7   8
+     *                  1
+     *                /  \
+     *               2    3
+     *              /      \
+     *             4        5
+     *                       \
+     *                       6
+     *                       / \
+     *                       7   8
      *
      * @return
      */
@@ -165,7 +275,7 @@ public class BinaryTreeTraserve {
         node1.right = node3;
         node2.left = node4;
         node3.right = node5;
-        node4.right = node6;
+        node5.right = node6;
         node6.left = node7;
         node6.right = node8;
 
