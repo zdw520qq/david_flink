@@ -1,4 +1,4 @@
-package david.java.algorithm;
+package david.java.algorithm.niuke;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import java.util.List;
  * @Author: David
  * @Date: Create in 下午7:41 2021/1/11
  */
-public class IdentifyLinkCycle {
+public class NC4_IdentifyLinkCycle {
 
     public static boolean hasCycle(ListNode head) {
 

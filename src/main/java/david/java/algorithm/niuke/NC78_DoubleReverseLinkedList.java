@@ -1,4 +1,4 @@
-package david.java.algorithm;
+package david.java.algorithm.niuke;
 
 
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @Author: David
  * @Date: Create in 下午9:39 2021/1/1
  */
-public class DoubleReverseLinkedList {
+public class NC78_DoubleReverseLinkedList {
     public static void main(String[] args) {
         DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
         list.add(1);

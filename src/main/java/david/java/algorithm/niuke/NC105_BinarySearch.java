@@ -1,4 +1,4 @@
-package david.java.algorithm;
+package david.java.algorithm.niuke;
 
 /**
  * @Description: 请实现有重复数字的有序数组的二分查找。
@@ -6,7 +6,7 @@ package david.java.algorithm;
  * @Author: David
  * @Date: Create in 下午11:10 2021/1/10
  */
-public class BinarySearch {
+public class NC105_BinarySearch {
 
     /**
      * 二分查找

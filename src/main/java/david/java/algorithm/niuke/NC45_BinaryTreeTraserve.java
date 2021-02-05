@@ -1,4 +1,4 @@
-package david.java.algorithm;
+package david.java.algorithm.niuke;
 
 import apple.laf.JRSUIUtils;
 
@@ -23,7 +23,7 @@ import java.util.*;
  * @Author: David
  * @Date: Create in 下午12:02 2021/1/12
  */
-public class BinaryTreeTraserve {
+public class NC45_BinaryTreeTraserve {
 
 
     public static void main(String[] args) {

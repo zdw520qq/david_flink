@@ -1,4 +1,4 @@
-package david.java.algorithm;
+package david.java.algorithm.niuke;
 
 import java.util.*;
 
@@ -33,7 +33,7 @@ import java.util.*;
  * @Author: David
  * @Date: Create in 上午9:23 2021/1/6
  */
-public class LRU {
+public class NC93_LRU {
     public static void main(String[] args) {
         int[][] data = new int[6][];
         data[0] = new int[]{1, 1, 1};

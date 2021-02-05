@@ -1,4 +1,4 @@
-package david.java.flink.function;
+package david.java.flink.operator.windows;
 
 import david.java.flink.function.custom.AverageAggregate;
 import david.java.flink.function.custom.MyProcessWindowFunctionWithReduceFunction;

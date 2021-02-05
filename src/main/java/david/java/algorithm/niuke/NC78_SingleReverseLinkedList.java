@@ -1,4 +1,4 @@
-package david.java.algorithm;
+package david.java.algorithm.niuke;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @Author: david
  * @Date: Create in 下午7:36 2020/12/30
  */
-public class SingleReverseLinkedList {
+public class NC78_SingleReverseLinkedList {
 
     public static void main(String[] args) {
         LinkedNode<Integer> list = new LinkedNode<>();

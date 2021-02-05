@@ -1,4 +1,4 @@
-package david.java.flink.operator;
+package david.java.flink.function;
 
 /**
  * @Description:
