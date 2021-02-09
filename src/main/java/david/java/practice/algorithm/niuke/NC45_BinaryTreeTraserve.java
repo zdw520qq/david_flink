@@ -1,8 +1,5 @@
-package david.java.algorithm.niuke;
+package david.java.practice.algorithm.niuke;
 
-import apple.laf.JRSUIUtils;
-
-import javax.swing.tree.TreeNode;
 import java.util.*;
 
 /**

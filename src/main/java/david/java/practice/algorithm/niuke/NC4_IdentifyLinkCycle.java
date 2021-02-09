@@ -1,6 +1,4 @@
-package david.java.algorithm.niuke;
-
-import java.util.List;
+package david.java.practice.algorithm.niuke;
 
 /**
  * @Description:

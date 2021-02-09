@@ -1,4 +1,4 @@
-package david.java.algorithm.niuke;
+package david.java.practice.algorithm.niuke;
 
 /**
  * @Description: 请实现有重复数字的有序数组的二分查找。

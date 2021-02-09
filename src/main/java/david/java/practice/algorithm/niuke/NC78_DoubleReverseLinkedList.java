@@ -1,4 +1,4 @@
-package david.java.algorithm.niuke;
+package david.java.practice.algorithm.niuke;
 
 
 import java.util.ArrayList;

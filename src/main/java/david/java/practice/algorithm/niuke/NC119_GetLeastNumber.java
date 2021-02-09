@@ -1,6 +1,5 @@
-package david.java.algorithm.niuke;
+package david.java.practice.algorithm.niuke;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
