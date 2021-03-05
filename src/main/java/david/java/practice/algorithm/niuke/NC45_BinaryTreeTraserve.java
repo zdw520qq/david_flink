@@ -55,15 +55,15 @@ public class NC45_BinaryTreeTraserve {
         // System.out.println(i3);
 
         // System.out.println("======= deque =======");
-        // Deque<Integer> deque = new ArrayDeque<>();
-        // deque.push(1);
-        // deque.push(2);
-        // deque.push(3);
-        // System.out.println(deque);
-        // System.out.println(deque.pollFirst());      //3
-        // System.out.println(deque.pollLast());    //1
-        // System.out.println(deque.pop()); //3
-        // System.out.println(deque);
+        Deque<Integer> deque = new ArrayDeque<>();
+        deque.push(1);
+        deque.push(2);
+        deque.push(3);
+        System.out.println(deque);
+        System.out.println(deque.pollFirst());      //3
+        System.out.println(deque.pollLast());    //1
+        System.out.println(deque.pop()); //3
+        System.out.println(deque);
 
         // System.out.println("========= queue =======");
         // LinkedList<Integer> link  = new LinkedList<>();
@@ -225,23 +225,11 @@ public class NC45_BinaryTreeTraserve {
     }
 
 
-    public int[] leverOrder(TreeNode root) {
-        List<Integer> list = new ArrayList<>();
 
-        Stack<Integer> stack = new Stack<>();
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-
-
-        System.out.println(stack);
-
-        return null;
-    }
 
 
     /**
-     * a treeNode below
+     * a treeNode as below
      * 先序遍历： 1 2 4 3 5 6 7 8
      * 中序遍历： 4 2 1 3 5 7 6 8
      * 后序遍历： 4 2 7 8 6 5 3 1

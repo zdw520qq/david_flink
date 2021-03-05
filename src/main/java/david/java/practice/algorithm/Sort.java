@@ -24,7 +24,7 @@ public class Sort {
     }
 
     /**
-     * 冒泡排序
+     * *************************** 1. 冒泡排序 *************************************
      *
      * @param input
      * @return
@@ -44,109 +44,219 @@ public class Sort {
     }
 
     /**
+     * *************************** 2. 快速排序 *************************************
+     * <p>
+     * 主要思路是, 把第一个值作为基准点, 比基准点大的都放到右边,比基准点小的都放到左边, 这样就好理解了,
+     * 基准点在左边则右边--, 基准点在右边,则左边++ pivot把数组分成2部分, pivot为中间值,
+     * 再在一次分割的过程中, pivot 一直不变
+     *
      * @param input
      * @return
      */
-    public static List<Integer> quickSort(int[] input) {
-        return null;
-    }
-
-
-    // /**
-    //  * 堆排序
-    //  * @param n 待排序数组
-    //  */
-    // public static void heapsort(int n[]) {
-    //     for (int i = n.length - 1; i >= 1; i--) {
-    //         buildHeap(n, i);
-    //         swap(n, 0, i);
-    //     }
-    // }
-    //
-    // /**
-    //  * @param n   待排序数组
-    //  * @param end 待排序数组末位下标
-    //  */
-    // public static void buildHeap(int n[], int end) {
-    //     int len = end + 1;
-    //     for (int i = len / 2 - 1; i >= 0; i--) {
-    //         //堆中i节点对应的左右子节点l和r
-    //         int l = 2 * i + 1, r = l + 1;
-    //         //指向较大数节点的指针
-    //         int p = l;
-    //         if (r <= len - 1 && n[l] < n[r]) {
-    //             p = r;
-    //         }
-    //         if (n[i] < n[p]) {
-    //             swap(n, i, p);
-    //         }
-    //     }
-    // }
-
-    // /**
-    //  * @param n 待排序数组
-    //  * @param i 待交换数字数组下标
-    //  * @param j 待交换数字数组下标
-    //  */
-    // private static void swap(int n[], int i, int j) {
-    //     n[i] ^= n[j];
-    //     n[j] ^= n[i];
-    //     n[i] ^= n[j];
-    // }
-
-    public static int[] sort(int[] sourceArray) throws Exception {
-        // 对 arr 进行拷贝，不改变参数内容
-        int[] arr = Arrays.copyOf(sourceArray, sourceArray.length);
-        int len = arr.length;
-        buildMaxHeap(arr, len);
-        for (int i = len - 1; i > 0; i--) {
-            swap(arr, 0, i);
-            len--;
-            heapify(arr, 0, len);
+    public static void quickSort(int[] input, int begin, int end) {
+        if (input == null || input.length == 1) {
+            return;
         }
-        return arr;
-    }
+        if (begin >= end) {
+            return;
+        }
+        //pivot一直不变
+        int pivot = input[begin];
+        int b = begin;
+        int e = end;
+        while (b < e) {
+            // 注意条件里pivot不能 == input[e||b], 因为,比如pivot在右边, 那它肯定==input[e],
+            // 这时,肯定不能e--, 因为此时是b在移动
+            while (b < e && pivot < input[e]) {
+                e--;
+            }
+            // pivot 与 input[b] 比较的前提是,已经交换过一次了,pivot在右边
+            while (b < e && pivot > input[b]) {
+                b++;
+            }
 
-    private static void buildMaxHeap(int[] arr, int len) {
-        for (int i = (int) Math.floor(len / 2); i >= 0; i--) {
-            heapify(arr, i, len);
+            // 这里是 input[b||e] == pivot 的情况, 因为pivot 肯定为 input[b] 或input[e],
+            // 所以就用input[b] == input[e]好了, 为了方便, 只要相对就 b++ 或者 e-- 就行了,
+            // 放心,pivot记录了基准值,不会变
+            if (b < e && input[b] == input[e]) {
+                b++;
+            }
+
+            // 当左边> 右边那肯定是要交换的
+            if (b < e && input[b] > input[e]) {
+                int tmp = input[b];
+                input[b] = input[e];
+                input[e] = tmp;
+            }
+        }
+        // 当 b=e 说明pivot已经经数据分割好了,开始下一轮,两边数组的分割了
+        if (b - 1 > begin) {
+            quickSort(input, begin, b - 1);
+        }
+        if (b + 1 < end) {
+            quickSort(input, b + 1, end);
         }
     }
 
-    private static void heapify(int[] arr, int i, int len) {
-        int left = 2 * i + 1;
-        int right = 2 * i + 2;
+
+    /**
+     * *************************** 3. 堆排序 *************************************
+     *
+     * @param data
+     */
+    public static void heepSort(int[] data) {
+        build(data, data.length);
+        for (int i = data.length - 1; i > 0; i--) {
+            int t = data[i];
+            data[i] = data[0];
+            data[0] = t;
+            build(data, i);
+        }
+    }
+
+    /**
+     * 构建堆, 节点为k, 默认k=data.length
+     *
+     * @param data
+     */
+    private static void build(int[] data, int k) {
+        for (int i = data.length / 2 - 1; i >= 0; i--) {
+            adjustHeap(data, i, k);
+        }
+    }
+
+    /**
+     * @param data 数组
+     * @param i    准备与子节点比对交换的节点
+     * @param k    默认 k = data.length, 即对所有数据进行构建堆,
+     *             当k < data.length的时候代表要构建的堆是数组的一部分,
+     *             比如求 头尾交换之后, 的部分不需要
+     */
+    private static void adjustHeap(int[] data, int i, int k) {
+        int l = 2 * i + 1;
+        int r = 2 * i + 2;
+        //用来标记与哪个交换;
         int largest = i;
-
-        if (left < len && arr[left] > arr[largest]) {
-            largest = left;
+        // 没有子节点了,就不需要比较了
+        if (l >= k) {
+            return;
         }
 
-        if (right < len && arr[right] > arr[largest]) {
-            largest = right;
+        int bigChildIndex = r >= k ? l : data[l] >= data[r] ? l : r;
+
+        if (data[i] < data[bigChildIndex]) {
+            largest = bigChildIndex;
         }
 
         if (largest != i) {
-            swap(arr, i, largest);
-            heapify(arr, largest, len);
+            int tmp = data[i];
+            data[i] = data[largest];
+            data[largest] = tmp;
+            adjustHeap(data, largest, k);
         }
     }
 
-    private static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+
+    /**
+     * *************************** 4. 选择排序 *************************************
+     * <p>
+     * 也是两个for循环, 不过每次记录最小的下标, 然后交换即可
+     *
+     * @param arr
+     * @return
+     */
+    public static void selectSort(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int min = i;
+            for (int j = i; j < arr.length; j++) {
+                if (arr[j] < arr[min]) {
+                    min = j;
+                }
+            }
+            if (min != i) {
+                swap(arr, i, min);
+            }
+        }
     }
 
 
+    /**
+     * *************************** 5. 插入排序 *************************************
+     * <p>
+     * 看做一个一个的向队列里插入, 在插入的时候就排序
+     * 第二个for,的目的是从第一个for的i开始向前比较, 如果 arr[j] > arr[j-1] 就没必要比了,直接break
+     *
+     * @param arr
+     */
+    public static void insertSort(int[] arr) {
+        if (arr == null || arr.length == 1) {
+            return;
+        }
+        for (int i = 0; i < arr.length; i++) {
+            //j >0见说明, j--
+            for (int j = i; j > 0; j--) {
+                if (arr[j] < arr[j - 1]) {
+                    swap(arr, j, j - 1);
+                } else {
+                    break;
+                }
+            }
+        }
+    }
+
+
+    /**
+     * *************************** 6. 归并排序 *************************************
+     *
+     * @param arr
+     */
+    public static int[] mergeSort(int[] arr, int begin, int end) {
+        if (arr == null) {
+            return arr;
+        }
+        if (begin == end) {
+            return new int[]{arr[begin]};
+        }
+        int mid = (begin + end) / 2;
+        int[] left = mergeSort(arr, begin, mid);
+        int[] right = mergeSort(arr, mid + 1, end);
+        int[] newArr = new int[left.length + right.length];
+
+        int l = 0, r = 0, n = 0;
+        while (l < left.length && r < right.length) {
+            newArr[n++] = left[l] > right[r] ? right[r++] : left[l++];
+        }
+        while (l < left.length) {
+            newArr[n++] = left[l++];
+        }
+        while (r < right.length) {
+            newArr[n++] = right[r++];
+        }
+
+        return newArr;
+    }
+
+
+    private static void swap(int[] arr, int i, int j) {
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
+    }
 
 
     public static void main(String[] args) throws Exception {
-        int n[] = {6, 5, 2, 7, 3, 9, 8};
-        sort(n);
-        System.out.print("堆排序结果：");
-        for (int m : n) {
+        int arr[] = {6, 5, 2, 7, 3, 1, 9, 8, 4, 9};
+        // System.out.print("堆排序结果：");
+        // heepSort(arr);
+        // selectSort(arr);
+        // insertSort(arr);
+        quickSort(arr, 0, arr.length - 1);
+        // arr = mergeSort(arr, 0, arr.length - 1);
+
+        for (int m : arr) {
             System.out.print(m + " ");
         }
+
+
     }
 }

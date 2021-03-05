@@ -1,5 +1,6 @@
 package david.java.practice.algorithm.niuke;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,8 +18,7 @@ public class NC119_GetLeastNumber {
         int[] data = {5, 6, 4, 7, 1, 9, 3, 0, 12, 76, 23, 14, 14, 32, 54};
         System.out.println(data.length);
 
-
-
+        int[] clone = data.clone();
 
         heepSort(data, 12);
 
