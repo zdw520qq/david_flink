@@ -53,7 +53,7 @@ public class NC50_reverseLinkedNodePerK extends Base {
         }
 
         if (k > len) {
-            return head;
+            return dummy.next;
         }
 
         for (int i = 0; i < len / k; i++) {
@@ -77,7 +77,10 @@ public class NC50_reverseLinkedNodePerK extends Base {
     }
 
     public static void main(String[] args) {
-        ListNode l1 = getInputSingleLinkedNode();
+        ListNode l1 = new ListNode(1);
+        ListNode l2 = new ListNode(2);
+
+        l1.next = l2;
 
         System.out.println(l1.toString());
 
