@@ -13,6 +13,9 @@ public class Test {
         System.out.println(a1 == a2);
 
 
+        int i = 0;
+        System.out.println(i);
+
 
     }
 

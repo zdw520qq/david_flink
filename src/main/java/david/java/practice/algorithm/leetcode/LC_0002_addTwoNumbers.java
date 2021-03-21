@@ -14,6 +14,12 @@ import david.java.practice.algorithm.Base;
  * @Date: Create in 下午6:38 2021/3/6
  */
 public class LC_0002_addTwoNumbers extends Base {
+    /**
+     * 题解:
+     * 先将两个链表翻转,这样位数就对齐了,都是从个位开始
+     *
+     *
+     */
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = null;
         ListNode tmp = null;
