@@ -13,6 +13,10 @@ import java.util.HashMap;
 public class NC41_longestSubarr {
 
 
+    /**
+     * 题解:
+     * 其实这题用双指针法更简单, {@link david.java.practice.algorithm.leetcode.LC_0003_nonRepeatStringLength}
+     */
     public static int maxLength (int[] arr) {
         HashMap<Integer, Integer> map = new HashMap<>();
         int maxLength = 0;

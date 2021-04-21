@@ -16,7 +16,8 @@ import david.java.practice.algorithm.Base;
 public class LC_0002_addTwoNumbers extends Base {
     /**
      * 题解:
-     * 先将两个链表翻转,这样位数就对齐了,都是从个位开始
+     * 先对齐, 先从两个list的各位开始加,如果从list迭代后,不是从低位到高位的,那么就翻转链表
+     * 注意点: 有个carry 是进位,如果两个数相加大于了10, 那就要进位, 两个list的位数不一致的话,则用0补足
      *
      *
      */
@@ -51,8 +52,8 @@ public class LC_0002_addTwoNumbers extends Base {
     }
 
     public static void main(String[] args) {
-        ListNode a1 = getInputSingleListNode(new int[]{9, 9, 9});
-        ListNode a2 = getInputSingleListNode(new int[]{9, 9, 9, 9, 9});
+        ListNode a1 = getInputSingleListNode(new int[]{1, 2, 3});
+        ListNode a2 = getInputSingleListNode(new int[]{1, 2, 3, 4, 5});
         ListNode listNode = addTwoNumbers(a1, a2);
         System.out.println(listNode.toString());
     }

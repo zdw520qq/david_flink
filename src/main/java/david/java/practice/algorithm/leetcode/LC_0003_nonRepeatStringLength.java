@@ -35,7 +35,11 @@ import java.util.HashSet;
 public class LC_0003_nonRepeatStringLength {
 
     /**
-     * 双指针法
+     * 双指针法:
+     * 两个指针, left在开始, right向右移, right每移动一次就将所在 char 装入set中, 并记录set最大的size
+     * right每次向右的时候,要判断下set中是否包含这个char, 如果包含了, 那么此时就是 left 向右移动,直到set不包含为止
+     *
+     *
      * @param s
      * @return
      */

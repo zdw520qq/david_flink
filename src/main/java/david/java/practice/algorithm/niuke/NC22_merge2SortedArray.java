@@ -10,6 +10,11 @@ package david.java.practice.algorithm.niuke;
  * @Date: Create in 下午11:04 2021/2/28
  */
 public class NC22_merge2SortedArray {
+
+
+    /**
+     * 功能描述: 就是简单的归并排序
+     */
     public static void merge(int A[], int m, int B[], int n) {
         int t = A.length - 1;
         while (m > 0 && n > 0) {

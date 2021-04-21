@@ -36,6 +36,24 @@ package david.java.practice.algorithm.leetcode;
  * @Date: Create in 下午9:39 2021/3/6
  */
 public class LC_0004_findMedianSortedArrays {
+    /**
+     * 题解:
+     * 因为两个数组都是有序的, 吧两个数组摞在一起, 然后一刀切开, 肯定会有一刀 把这摞起来的数组分为两部分, 左边的都小于右边, 利用二分法来切割
+     *
+     * 切的时候可以从上排的中间开始切, 下面的切点的位置是可以计算出来的
+     *
+     * 切割后满足左边都<右边, 因为每行都是有序的, a2< a3, b2 <b3, 所以简化为  a2<b3 && b2< a3
+     *
+     * a1 a2 | a3 a4
+     * b1 b2 | b3 b4
+     *
+     *
+     *
+     *
+     * @param nums1
+     * @param nums2
+     * @return:
+     */
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
         // 为了方便切割, 将段数组放在上面, 在这里体现为第一个
@@ -94,19 +112,19 @@ public class LC_0004_findMedianSortedArrays {
         }
 
         int leftMax = Math.max(lu, ld);
-        int rightMin = Math.min(ru,rd);
+        int rightMin = Math.min(ru, rd);
 
         if ((m + n) % 2 == 1) {
             return leftMax;
         } else {
-            return  (leftMax + rightMin) / 2d;
+            return (leftMax + rightMin) / 2d;
         }
 
     }
 
     public static void main(String[] args) throws InterruptedException {
-        int[] a1 = new int[]{3,8,9,10};
-        int[] a2 = new int[]{2,4,6,12,18,20};
+        int[] a1 = new int[]{3, 8, 9, 10};
+        int[] a2 = new int[]{2, 4, 6, 12, 18, 20};
 
         double medianSortedArrays = findMedianSortedArrays(a1, a2);
         System.out.println(medianSortedArrays);

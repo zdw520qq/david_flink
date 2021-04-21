@@ -31,6 +31,17 @@ package david.java.practice.algorithm.leetcode;
  */
 public class LC_0007_int_reverse {
 
+    /**
+     * 功能描述: 题解
+     *
+     * 主要的难点在于防止integer溢出,每次添加的时候都要判断下, interger的最大值与最小值 / 10 后 与值对比的大小
+     *
+     * 计算逻辑, 数每次对10取余, 然后 新数 *= 10 然后加上余数
+     *
+     *
+     * @param x
+     * @return:
+     */
     public int reverse(int x) {
 
         int rev = 0;

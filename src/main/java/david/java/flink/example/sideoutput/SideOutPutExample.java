@@ -31,6 +31,7 @@ public class SideOutPutExample {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         env.setStreamTimeCharacteristic(TimeCharacteristic.IngestionTime);
+        env.setStreamTimeCharacteristic(TimeCharacteristic.ProcessingTime);
 
         env.getConfig().setGlobalJobParameters(params);
 
