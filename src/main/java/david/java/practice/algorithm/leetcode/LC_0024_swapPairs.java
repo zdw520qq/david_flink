@@ -20,7 +20,7 @@ import david.java.practice.algorithm.Base;
  * @Author: David
  * @Date: Create in 下午5:43 2021/4/22
  */
-public class LC_0023_swapPairs extends Base {
+public class LC_0024_swapPairs extends Base {
 
 
     /**
