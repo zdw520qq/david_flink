@@ -1,6 +1,8 @@
 package david.java.practice.algorithm;
 
 
+import david.java.practice.algorithm.niuke.NC45_BinaryTreeTraserve;
+
 /**
  * @Description:
  * @Author: David
@@ -84,6 +86,57 @@ public abstract class Base {
         }
 
         return head;
+    }
+
+
+   public static class TreeNode {
+        public int val = 0;
+        public TreeNode left = null;
+        public TreeNode right = null;
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+    }
+
+
+    /**
+     * a treeNode as below
+     * 先序遍历： 1 2 4 3 5 6 7 8    根左右
+     * 中序遍历： 4 2 1 3 5 7 6 8    左根右
+     * 后序遍历： 4 2 7 8 6 5 3 1    左右根
+     * <p>
+     *                  1
+     *                /  \
+     *               2    3
+     *              /      \
+     *             4        5
+     *                       \
+     *                       6
+     *                       / \
+     *                       7   8
+     *
+     * @return
+     */
+    public static TreeNode getBinaryTreeInstance() {
+        TreeNode node1 = new TreeNode(1);
+        TreeNode node2 = new TreeNode(2);
+        TreeNode node3 = new TreeNode(3);
+        TreeNode node4 = new TreeNode(4);
+        TreeNode node5 = new TreeNode(5);
+        TreeNode node6 = new TreeNode(6);
+        TreeNode node7 = new TreeNode(7);
+        TreeNode node8 = new TreeNode(8);
+
+        node1.left = node2;
+        node1.right = node3;
+        node2.left = node4;
+        node3.right = node5;
+        node5.right = node6;
+        node6.left = node7;
+        node6.right = node8;
+
+        return node1;
     }
 
     public static void main(String[] args) {
