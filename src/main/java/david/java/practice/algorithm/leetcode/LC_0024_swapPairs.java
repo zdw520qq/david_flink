@@ -1,6 +1,6 @@
 package david.java.practice.algorithm.leetcode;
 
-import david.java.practice.algorithm.Base;
+import david.java.practice.algorithm.DavidBase;
 
 /**
  * @Description: 给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。
@@ -20,7 +20,7 @@ import david.java.practice.algorithm.Base;
  * @Author: David
  * @Date: Create in 下午5:43 2021/4/22
  */
-public class LC_0024_swapPairs extends Base {
+public class LC_0024_swapPairs extends DavidBase {
 
 
     /**

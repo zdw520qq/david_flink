@@ -1,6 +1,6 @@
 package david.java.practice.algorithm.binarytree;
 
-import david.java.practice.algorithm.Base;
+import david.java.practice.algorithm.DavidBase;
 
 /**
  * @Description: 给定一个二叉树，判断它是否是高度平衡的二叉树。
@@ -11,7 +11,7 @@ import david.java.practice.algorithm.Base;
  * @Author: David
  * @Date: Create in 上午11:45 2021/4/30
  */
-public class LC_0110_isBalanced extends Base {
+public class LC_0110_isBalanced extends DavidBase {
 
     /**
      * 题解:

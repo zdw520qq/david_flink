@@ -1,13 +1,13 @@
 package david.java.practice.algorithm.niuke;
 
-import david.java.practice.algorithm.Base;
+import david.java.practice.algorithm.DavidBase;
 
 /**
  * @Description:
  * @Author: David
  * @Date: Create in 下午8:29 2021/2/20
  */
-public class NC88_findNthLargest extends Base {
+public class NC88_findNthLargest extends DavidBase {
 
     public static int findKth(int[] a, int n, int K) {
         return quickFindK(a, 0, n-1, K - 1);

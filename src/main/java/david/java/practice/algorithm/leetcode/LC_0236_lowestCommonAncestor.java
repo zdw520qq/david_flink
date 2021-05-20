@@ -1,6 +1,6 @@
 package david.java.practice.algorithm.leetcode;
 
-import david.java.practice.algorithm.Base;
+import david.java.practice.algorithm.DavidBase;
 
 import java.util.*;
 
@@ -11,7 +11,7 @@ import java.util.*;
  * @Author: David
  * @Date: Create in 下午4:49 2021/4/28
  */
-public class LC_0236_lowestCommonAncestor extends Base {
+public class LC_0236_lowestCommonAncestor extends DavidBase {
 
     private static Map<Integer, TreeNode> parent = new HashMap<>();
     private static Set<Integer> visited = new HashSet<>();

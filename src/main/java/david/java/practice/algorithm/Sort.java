@@ -48,7 +48,10 @@ public class Sort {
      * <p>
      * 主要思路是, 把第一个值作为基准点, 比基准点大的都放到右边,比基准点小的都放到左边, 这样就好理解了,
      * 基准点在左边则右边--, 基准点在右边,则左边++ pivot把数组分成2部分, pivot为中间值,
-     * 再在一次分割的过程中, pivot 一直不变
+     *
+     * 需要注意的地方:
+     * 因为是为了把数组分为两部分,所以, 比pivot小的在左边, 大的在右边,那么 还有就是等于pivot的数, 只能放在一边, 或左,或右,
+     * 即要考虑三种情况  > = <, 因为pivot的值在不停的交换,所以 要么pivot 的下标是 l  要么是r ,所以,  ==条件也就是  input[l] = input[r]
      *
      * @param input
      * @return
@@ -82,14 +85,14 @@ public class Sort {
                 b++;
             }
 
-            // 当左边> 右边那肯定是要交换的
+            // 当左边> 右边那肯定是要交换的, 而且此时 pivot 不是在 b 上, 就是在在 e上
             if (b < e && input[b] > input[e]) {
                 int tmp = input[b];
                 input[b] = input[e];
                 input[e] = tmp;
             }
         }
-        // 当 b=e 说明pivot已经经数据分割好了,开始下一轮,两边数组的分割了
+        // 当 b=e 说明pivot已经经数据分割好了,开始下一轮,两边数组的分割了, b不需要动, 已经固定了
         if (b - 1 > begin) {
             quickSort(input, begin, b - 1);
         }

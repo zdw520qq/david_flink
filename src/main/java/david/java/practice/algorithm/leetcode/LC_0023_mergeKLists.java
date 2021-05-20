@@ -1,6 +1,6 @@
 package david.java.practice.algorithm.leetcode;
 
-import david.java.practice.algorithm.Base;
+import david.java.practice.algorithm.DavidBase;
 
 /**
  * @Description: 给你一个链表数组，每个链表都已经按升序排列。
@@ -31,7 +31,7 @@ import david.java.practice.algorithm.Base;
  * @Author: David
  * @Date: Create in 下午2:51 2021/4/25
  */
-public class LC_0023_mergeKLists extends Base {
+public class LC_0023_mergeKLists extends DavidBase {
 
     /**
      * 题解:使用归并排序

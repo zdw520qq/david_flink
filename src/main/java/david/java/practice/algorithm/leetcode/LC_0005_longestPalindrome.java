@@ -29,7 +29,7 @@ package david.java.practice.algorithm.leetcode;
 public class LC_0005_longestPalindrome {
 
     /**
-     * 第一种, 动态规划, 主要思路是, 如果一个字符串是 回文字符串, 那么去掉首位, 他仍然是回文, 如果不是,就pass掉
+     * 第一种, 动态规划, 主要思路是, 如果一个字符串是 回文字符串, 那么去掉首尾, 他仍然是回文, 如果不是,就pass掉
      * 在纸上画矩阵,进行辅助
      * @param s
      * @return

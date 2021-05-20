@@ -1,7 +1,7 @@
 package david.java.practice.algorithm.leetcode;
 
 
-import david.java.practice.algorithm.Base;
+import david.java.practice.algorithm.DavidBase;
 
 /**
  * @Description: 给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
@@ -10,7 +10,7 @@ import david.java.practice.algorithm.Base;
  * @Author: David
  * @Date: Create in 上午11:31 2021/4/21
  */
-public class LC_0019_removeNthFromEnd extends Base {
+public class LC_0019_removeNthFromEnd extends DavidBase {
     /**
      * 题解: 方法一: 先遍历测出长度, 在算出的node更改指针
      * 方法二: 不需要测出长度, 使用双指针, 前后两个指针相差 n,这样 fist到底的时候, second后面的就是要删除的

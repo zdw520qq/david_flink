@@ -1,6 +1,6 @@
 package david.java.practice.algorithm.leetcode;
 
-import david.java.practice.algorithm.Base;
+import david.java.practice.algorithm.DavidBase;
 
 import java.util.HashMap;
 
@@ -27,7 +27,7 @@ import java.util.HashMap;
  * @Author: David
  * @Date: Create in 下午6:16 2021/3/6
  */
-public class LC_0001_twoNumSum extends Base {
+public class LC_0001_twoNumSum extends DavidBase {
 
     /**
      * 功能描述: 转为已知一个数a, 求 target-a 在不在

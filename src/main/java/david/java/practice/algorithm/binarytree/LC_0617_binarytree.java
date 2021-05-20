@@ -1,6 +1,6 @@
 package david.java.practice.algorithm.binarytree;
 
-import david.java.practice.algorithm.Base;
+import david.java.practice.algorithm.DavidBase;
 
 /**
  * @Description: 给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。
@@ -27,7 +27,7 @@ import david.java.practice.algorithm.Base;
  * @Author: David
  * @Date: Create in 上午11:32 2021/4/29
  */
-public class LC_0617_binarytree extends Base {
+public class LC_0617_binarytree extends DavidBase {
 
     public static TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
         if (root1 == null) {

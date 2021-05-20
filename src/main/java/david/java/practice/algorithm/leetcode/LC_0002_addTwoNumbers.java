@@ -1,6 +1,6 @@
 package david.java.practice.algorithm.leetcode;
 
-import david.java.practice.algorithm.Base;
+import david.java.practice.algorithm.DavidBase;
 
 /**
  * @Description: 两数相加
@@ -13,7 +13,7 @@ import david.java.practice.algorithm.Base;
  * @Author: David
  * @Date: Create in 下午6:38 2021/3/6
  */
-public class LC_0002_addTwoNumbers extends Base {
+public class LC_0002_addTwoNumbers extends DavidBase {
     /**
      * 题解:
      * 先对齐, 先从两个list的各位开始加,如果从list迭代后,不是从低位到高位的,那么就翻转链表

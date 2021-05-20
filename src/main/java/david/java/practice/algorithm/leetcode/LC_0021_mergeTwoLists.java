@@ -1,6 +1,6 @@
 package david.java.practice.algorithm.leetcode;
 
-import david.java.practice.algorithm.Base;
+import david.java.practice.algorithm.DavidBase;
 
 /**
  * @Description: 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
@@ -18,7 +18,7 @@ import david.java.practice.algorithm.Base;
  * @Author: David
  * @Date: Create in 下午3:37 2021/4/22
  */
-public class LC_0021_mergeTwoLists extends Base {
+public class LC_0021_mergeTwoLists extends DavidBase {
     // 就是归并
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode node = new ListNode(0);

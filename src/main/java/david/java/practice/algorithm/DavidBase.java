@@ -3,12 +3,16 @@ package david.java.practice.algorithm;
 
 import david.java.practice.algorithm.niuke.NC45_BinaryTreeTraserve;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * @Description:
  * @Author: David
  * @Date: Create in 下午8:30 2021/2/20
  */
-public abstract class Base {
+public abstract class DavidBase {
 
     public static void swap(int[] arr, int i, int j) {
         int tmp = arr[i];
@@ -28,6 +32,9 @@ public abstract class Base {
         System.out.println(sb.toString());
     }
 
+    public static List<Integer> arr2List(int[] arr) {
+        return Arrays.stream(arr).boxed().collect(Collectors.toList());
+    }
 
     public static class ListNode {
         public int val;
@@ -56,6 +63,7 @@ public abstract class Base {
             return sb.toString();
         }
     }
+
 
     public static ListNode getInputSingleListNode() {
         ListNode l1 = new ListNode(1);

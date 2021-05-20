@@ -1,6 +1,6 @@
 package david.java.practice.algorithm.niuke;
 
-import david.java.practice.algorithm.Base;
+import david.java.practice.algorithm.DavidBase;
 
 /**
  * @Description: 链表中的节点每k个一组翻转
@@ -25,7 +25,7 @@ import david.java.practice.algorithm.Base;
  * @Author: David
  * @Date: Create in 上午10:10 2021/3/4
  */
-public class NC50_reverseLinkedNodePerK extends Base {
+public class NC50_reverseLinkedNodePerK extends DavidBase {
 
 
     /**

@@ -1,6 +1,6 @@
 package david.java.practice.algorithm.leetcode;
 
-import david.java.practice.algorithm.Base;
+import david.java.practice.algorithm.DavidBase;
 
 /**
  * @Description: 给你一个链表，每k个节点一组进行翻转，请你返回翻转后的链表。
@@ -36,7 +36,7 @@ import david.java.practice.algorithm.Base;
  * @Author: David
  * @Date: Create in 上午10:53 2021/4/25
  */
-public class LC_0025_reverseKGroup extends Base {
+public class LC_0025_reverseKGroup extends DavidBase {
 
 
     /**

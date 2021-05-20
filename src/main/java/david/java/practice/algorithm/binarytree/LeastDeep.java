@@ -1,6 +1,6 @@
 package david.java.practice.algorithm.binarytree;
 
-import david.java.practice.algorithm.Base;
+import david.java.practice.algorithm.DavidBase;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,7 +11,7 @@ import java.util.List;
  * @Author: David
  * @Date: Create in 下午3:44 2021/4/28
  */
-public class LeastDeep extends Base {
+public class LeastDeep extends DavidBase {
 
 
     /**

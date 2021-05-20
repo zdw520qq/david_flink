@@ -1,6 +1,6 @@
 package david.java.practice.algorithm.niuke;
 
-import david.java.practice.algorithm.Base;
+import david.java.practice.algorithm.DavidBase;
 
 import java.util.HashMap;
 
@@ -14,7 +14,7 @@ import java.util.HashMap;
  * @Author: David
  * @Date: Create in 下午11:39 2021/2/21
  */
-public class NC61_twoNumSum extends Base {
+public class NC61_twoNumSum extends DavidBase {
     /**
      * 结题思路:
      * 肯定不能排序, 可以hash, 先for循环将数组的数组存入map, 值为key, 索引为value,  然后在for循环 然后用map.get(target-num1) 是否为null
