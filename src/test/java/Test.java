@@ -7,20 +7,11 @@ import scala.App;
  */
 public class Test {
     public static void main(String[] args) {
-       Apple apple = new Apple();
-        Apple  a1 = apple;
-        Apple  a2 = apple;
-        System.out.println(a1 == a2);
+        Character.isDigit()
 
 
-        int i = 0;
-        System.out.println(i);
 
 
-    }
-
-    static class Apple{
-        int age;
     }
 
 
