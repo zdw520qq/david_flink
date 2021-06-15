@@ -56,6 +56,7 @@ public class LC_0020_isAlive {
         map.put(']', '[');
         map.put(')', '(');
 
+        // 一边塞,一边取
         for (char c : chars) {
             if (map.containsKey(c)) {
                 Character pop = deque.peek();

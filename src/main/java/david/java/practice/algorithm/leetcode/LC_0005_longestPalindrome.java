@@ -54,6 +54,7 @@ public class LC_0005_longestPalindrome {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < i; j++) {
                 if (chars[i] == chars[j]){
+                    //此时,说明 i 与 j 就差 2或1, if i-j = 1 , 比如 aa ; 如果i-j = 2,  aba
                     if (i - j < 3) {
                         matrix[j][i] = true;
                     } else {

@@ -31,7 +31,8 @@ import java.util.Stack;
  */
 public class LC_0232_MyQueue {
     /**
-     * Initialize your data structure here.
+     * 题解: in 用来  进来,  out 用来出
+     *
      */
     private Stack<Integer> in;
     private Stack<Integer> out;

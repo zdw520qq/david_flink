@@ -32,7 +32,7 @@ public class LC_0018_foursum {
 
         Arrays.sort(nums);
 
-        //,此层为啊, 最右侧要留3个
+        //,此层为a, 最右侧要留3个
         for (int i = 0; i < nums.length - 3; i++) {
             //这里是 >0,防止数组越界
             if (i > 0 && nums[i] == nums[i - 1]) {
