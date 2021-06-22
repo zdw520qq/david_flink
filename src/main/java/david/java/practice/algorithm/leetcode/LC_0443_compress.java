@@ -51,7 +51,7 @@ import david.java.practice.algorithm.DavidBase;
  * @Author: David
  * @Date: Create in 上午10:29 2021/6/11
  */
-public class LC_443_compress extends DavidBase {
+public class LC_0443_compress extends DavidBase {
 
 
     public int compress(char[] chars) {
@@ -91,7 +91,7 @@ public class LC_443_compress extends DavidBase {
     public static void main(String[] args) {
         // char[] chars = {'a','a','b','b','c','c','c'};
         char[] chars = {'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'};
-        LC_443_compress lc = new LC_443_compress();
+        LC_0443_compress lc = new LC_0443_compress();
         int compress = lc.compress(chars);
         System.out.println(compress);
     }
