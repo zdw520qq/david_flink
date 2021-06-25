@@ -1,4 +1,4 @@
-package david.java.practice.algorithm.leetcode;
+package david.java.practice.algorithm.meituan;
 
 /**
  * @Description: 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。

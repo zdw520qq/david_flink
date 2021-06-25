@@ -1,4 +1,4 @@
-package david.java.practice.algorithm.leetcode;
+package david.java.practice.algorithm.ali;
 
 import david.java.practice.algorithm.DavidBase;
 

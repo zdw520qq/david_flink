@@ -27,7 +27,7 @@ public abstract class DavidBase {
     public static void printArr(int[] arr) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < arr.length; i++) {
-            sb.append(i).append(", ");
+            sb.append(arr[i]).append(", ");
         }
         System.out.println(sb.toString());
     }
@@ -78,6 +78,19 @@ public abstract class DavidBase {
         l4.next = l5;
 
         return l1;
+    }
+
+    public static ListNode getCustomInputSingleListNode(int[] arr) {
+
+        ListNode head = new ListNode();
+        ListNode pre = head;
+        for (int i = 0; i < arr.length; i++) {
+            ListNode ln = new ListNode(arr[i]);
+            pre.next = ln;
+            pre = ln;
+        }
+
+        return head.next;
     }
 
     public static ListNode getInputSingleListNode(int[] arr) {

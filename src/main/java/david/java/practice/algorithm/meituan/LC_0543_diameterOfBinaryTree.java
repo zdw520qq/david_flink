@@ -1,8 +1,6 @@
-package david.java.practice.algorithm.leetcode;
+package david.java.practice.algorithm.meituan;
 
 import david.java.practice.algorithm.DavidBase;
-
-import javax.swing.tree.TreeNode;
 
 /**
  * @Description: 二叉树直径

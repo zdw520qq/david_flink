@@ -1,4 +1,4 @@
-package david.java.practice.algorithm.leetcode;
+package david.java.practice.algorithm.meituan;
 
 import java.util.HashMap;
 import java.util.Map;

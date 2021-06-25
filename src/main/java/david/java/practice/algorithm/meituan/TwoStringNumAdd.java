@@ -1,6 +1,5 @@
 package david.java.practice.algorithm.meituan;
 
-import java.util.Stack;
 
 /**
  * @Description:
@@ -10,52 +9,20 @@ import java.util.Stack;
 public class TwoStringNumAdd {
 
 
-    public static String solve(String s, String t) {
+    public static String solve(String num1, String num2) {
         // write code here
-        int sLength = s.length();
-        int tLength = t.length();
+        int l1 = num1.length() -1;
+        int l2 = num2.length() -1;
+        int add = 0;
 
-        int i = sLength - 1, j = tLength - 1;
-
-        int tip = 0;
         StringBuilder sb = new StringBuilder();
-
-        // Stack<Integer> stack = new Stack<>();
-
-
-        while (i >= 0 && j >= 0) {
-
-            int is = Integer.parseInt(String.valueOf(s.charAt(i)));
-            int it = Integer.parseInt(String.valueOf(t.charAt(j)));
-
-            int num = (is + it + tip) % 10;
-            tip = (is + it + tip) / 10;
-
-            sb.append(num);
-
-            i--;
-            j--;
-
-        }
-
-        // s 比较长
-        while (i >= 0) {
-            int is = Integer.parseInt(String.valueOf(s.charAt(i--)));
-            int num = (is + tip) % 10;
-            tip = (is + tip) / 10;
-            sb.append(num);
-        }
-
-        // t 比较长
-        while (j >= 0) {
-            int it = Integer.parseInt(String.valueOf(s.charAt(j--)));
-            int num = (it + tip) % 10;
-            tip = (it + tip) / 10;
-            sb.append(num);
-        }
-
-        if (tip == 1) {
-            sb.append(tip);
+        while (l1 >= 0 || l2 >=0 || add > 0) {
+            int n1 = l1 >=0 ? num1.charAt(l1) - '0' : 0;
+            int n2 = l2 >=0 ? num2.charAt(l2) - '0' : 0;
+            sb.append((n1 + n2 + add) % 10);
+            add = (n1 + n2 + add) / 10;
+            l1 --;
+            l2 --;
         }
 
         return sb.reverse().toString();

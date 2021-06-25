@@ -1,4 +1,4 @@
-package david.java.practice.algorithm.leetcode;
+package david.java.practice.algorithm.meituan;
 
 import david.java.practice.algorithm.DavidBase;
 
@@ -25,5 +25,19 @@ public class LC_0094_inorderTraversal extends DavidBase {
         midTraverse(root.left, list);
         list.add(root.val);
         midTraverse(root.right, list);
+    }
+
+
+
+    public static void main(String[] args) {
+        TreeNode tree = getBinaryTreeInstance();
+        System.out.println(findLength(tree));
+    }
+
+    private static int findLength(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return  findLength(root.left) + findLength(root.right) + 1;
     }
 }
